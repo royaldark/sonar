@@ -33,6 +33,7 @@ function printStatistics() {
 		min = Math.min.apply(null, _results),
 		max = Math.max.apply(null, _results),
 		avg = stats.mean(_results),
+		median = stats.median(_results),
 		stdev = stats.stdev(_results),
 		quintiles = [
 			stats.percentile(_results, 0.2),
@@ -43,7 +44,7 @@ function printStatistics() {
 
 	console.log('\n--- ping statistics ---');
 	console.log(`${count} requests over ${elapsed}ms`);
-	console.log(`min ${min}ms / max ${max}ms / avg ${avg}ms / stdev ${stdev}ms`);
+	console.log(`min ${min}ms / max ${max}ms / median ${median}ms / avg ${avg}ms / stdev ${stdev}ms`);
 	console.log(`quintiles ${quintiles[0]}ms / ${quintiles[1]}ms / ${quintiles[2]}ms / ${quintiles[3]}ms`);
 }
 
